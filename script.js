@@ -4,17 +4,18 @@ let password = [];
 //  Declare ARRAYS for each one - data structures 
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var numerical = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numerical = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", ":", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "?", "@", "[", "^", "|"];
 
 function generatePassword() { 
   // User input - how many characters do you want to contain? 
+  let password = []; // to clear the previous password string
   let userInput = parseInt(prompt("Please enter number of characters"));
 
   // Conditional - if user chooses x number of characters total
-  if (userInput < 8 || userInput == null) {
+  if (userInput < 8 || !userInput ) {
     alert("Please enter at least 8 characters!");
-
+    
   } else if (userInput > 128) {
     alert("No more than 128 characters!");
 
@@ -51,14 +52,14 @@ function generatePassword() {
 
       password = password.concat(possibleChar[randomChar]);
     }
-    password.toString().replace(/,/g, "");
+    //password.toString().replace(/,/g, "");
 
     console.log(password);
     // this return statement fixes the output to #password 
-    return password;
+    return password.join("");
+
   }
   // randomly select Y numner of chars, push it to the results array
-
 };
 // Display results on to page 
 var generateBtn = document.querySelector("#generate");
@@ -69,12 +70,11 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 // target TextArea element, display results 
 document.getElementById("password").value = password;
 // adding textContent here -- will this work?
-document.getElementById("password").textContent = password;
+//document.getElementById("password").textContent = password;
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
