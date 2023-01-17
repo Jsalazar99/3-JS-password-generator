@@ -15,6 +15,7 @@ SO THAT I can create a strong password that provides greater security
 ```
 
 ## Link to deployed application
+
 [JavaScript Password Generator](https://jsalazar99.github.io/3-JS-password-generator/)
 ---
 
