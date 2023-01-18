@@ -44,3 +44,11 @@ THEN the password is either displayed in an alert or written to the page
 The following image shows the web application's appearance and functionality:
 
 ![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+
+## Some issues I had:
+
+* userInput not validating empty input - LINE 16 (FIXED)
+* if/else 8-128 numbers isn’t sending alerts - LINE 17 (FIXED)
+* output function to #password ID - LINE 61 (FIXED) 
+* Password outputting commas between each character - LINE 61 (FIXED)
+

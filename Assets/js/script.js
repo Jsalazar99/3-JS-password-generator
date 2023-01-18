@@ -15,9 +15,11 @@ function generatePassword() {
   // Conditional - if user chooses x number of characters total
   if (userInput < 8 || !userInput ) {
     alert("Please enter at least 8 characters!");
+    return(password);
     
   } else if (userInput > 128) {
     alert("No more than 128 characters!");
+    return(password);  
 
   } else {
     // LC prompt confirm 
